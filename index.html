@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- in mobile set initial zoom level of page to 100%, set site size to equal device width not a larger canvas that is shrunk down-->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Alex Nguyen Portfolio</title>
+    <!-- Link to reset or normalize before main.css
+    only choose one -->
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="hidden">Welcome to Alex Nguyen Portfolio Site</h1>
+    <header id="main-header" class="grid-con">
+       <div class="col-span-4" id="logo-con">
+        <img src="images/logo-color.svg" id="logo">
+       </div>
+       <nav class="col-span-full" id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="">Guitars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="grid-con" id="about-us">
+            <div id="hero-con" class="col-span-full">
+                <img src="images/hero.jpg" alt="Rack of guitars">
+            </div>
+            <h2 class="col-span-full">About Us</h2>
+            <section class="col-span-4 m-col-span-6">
+                <p>In the heart of a small, picturesque town nestled between rolling hills and serene countryside, HarmoniGuitars was born. Founded in 1975 by two lifelong friends, Daniel Archer and Benjamin Harper, this company has become a symbol of passion, craftsmanship, and a deep love for music.</p>
+            </section>
+            <section class="col-span-4 m-col-span-6">    
+                <p>The name "HarmoniGuitars" was inspired by their shared vision of creating instruments that would produce harmonious and soul-stirring sounds. They set out to create guitars that would blend traditional craftsmanship with innovative designs, catering to a wide range of musicians, from budding beginners to seasoned professionals.</p>
+            </section>
+        </div>
+        <div class="grid-con" id="founders">
+            <section class="col-span-4 card">
+                <img src="images/daniel.jpg" alt="Daniel playing guitar">
+                <h2>Daniel Archer</h2>
+                <p>Daniel Archer, a co-founder of HarmoniGuitars, was born in 1950 with a profound love for music coursing through his veins. Raised in the same picturesque town where HarmoniGuitars would later be established, he discovered his passion for guitars at a young age. Daniel's exceptional skills as a craftsman and his innate musical talent made him the driving force behind the company's guitar designs.</p>
+            </section>
+            <section class="col-span-4 card">
+                <img src="images/ben.jpg" alt="Benjamin playing guitar">
+                <h2>Benjamin Harper</h2>
+                <p>Benjamin Harper, the other half of HarmoniGuitars' founding duo, was born in 1952, just a stone's throw away from Daniel's childhood home. Like Daniel, Benjamin's love for music was a lifelong affair. His artistic sensibility and keen eye for detail complemented Daniel's craftsmanship perfectly. Benjamin was responsible for the exquisite designs and aesthetics that set HarmoniGuitars apart.</p>
+            </section>
+            <section class="col-span-4 card">
+                <img src="images/colin.jpg" alt="Colin playing guitar">
+                <h2>Colin Macklin</h2>
+                <p>Colin Macklin, a close friend and trusted collaborator of Daniel and Benjamin, joined the HarmoniGuitars team in the late 1970s. Born in 1954, Colin brought a different dimension to the company. His expertise in woodworking and technical craftsmanship complemented the founders' vision, allowing them to take their guitars to new heights.</p>
+            </section>
+        </div>    
+    </main>
+    <footer class="grid-con">
+        <p class="col-span-full">&copy; 2003 - HarmoniGuitars</p>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
