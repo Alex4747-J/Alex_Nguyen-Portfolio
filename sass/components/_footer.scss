@@ -1,0 +1,18 @@
+@use '../abstracts';
+
+footer{
+    background-color: abstracts.$accent-color;
+    color: #fff;
+    height: 80px;
+    padding: 20px;
+    text-align: center;
+    @include abstracts.borderRad(20px);
+    
+    p{
+        font-size: 18px;
+        margin: 0;
+        line-height: 0  ;
+    }
+}
+
+
