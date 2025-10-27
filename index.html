@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- in mobile set initial zoom level of page to 100%, set site size to equal device width not a larger canvas that is shrunk down-->
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <title>Alex Nguyen Portfolio</title>
-    <!-- Link to reset or normalize before main.css
-    only choose one -->
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css" />
 </head>
 <body>
     <h1 class="hidden">Welcome to Alex Nguyen Portfolio Site</h1>
@@ -39,6 +37,21 @@
             </section>
         </div>
         
+        <!-- Video Player -->
+         <section id="video-section">
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-12">
+                <h2>Video Showcase</h2>
+            </div>
+            <div class="col-span-4 m-col-span-10 m-col-start-2 l-col-span-8 l-col-start-3">
+                <video id="player" playsinline controls>
+                    <source src="videos/demo.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+    </section>
+
+
     </main>
     <footer class="grid-con">
         <p class="col-span-full">&copy; 2003 - HarmoniGuitars</p>
