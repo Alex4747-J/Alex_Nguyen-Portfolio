@@ -57,8 +57,7 @@
     <main>
     <section id="player-container">
         <h2><span class="highlight-green">Demo</span> Reels</h2>
-        <video controls preload="metadata" poster="images/DemoReels_Poster.png">
-            <source src="video/DemoReels.mp4" type="video/mp4">
+        <video controls preload="metadata" poster="images/DemoReels_Poster.webp">
             <source src="video/DemoReels.webm" type="video/webm">
             <p>You are using an older browser that does not support HTML5 Video. Please update your browser.</p>
         </video>
@@ -82,7 +81,13 @@
             <div class="project-showcase animate-fade-up">
                 <h3 class="project-name">Gekk Earbuds</h3>
                 <div class="project-image">
-                    <img src="https://placehold.co/800x450/B6CE4D/ffffff?text=Project+1+Thumbnail" alt="Earbuds Thumbnail">
+                    <img src="images/earbuds/gekk_thumbnail_L.jpg"
+                         srcset="images/earbuds/gekk_thumbnail_S.jpg 200w,
+                                 images/earbuds/gekk_thumbnail_M.jpg 400w,
+                                 images/earbuds/gekk_thumbnail_L.jpg 800w"
+                         sizes="(max-width: 768px) 100vw, (max-width: 900px) 50vw, 550px"
+                         alt="Gekk Earbuds Project Thumbnail"
+                         loading="lazy">
                 </div>
                 <div class="project-tags">
                     <span class="tag">Motion Design</span>
@@ -92,13 +97,20 @@
                 <p class="project-description">
                     <strong>Note:</strong> A project where I had to create a strong earbuds branding website for my own 3D creation.
                 </p>
+                <a href="case_study_earbuds.html" class="btn btn-primary">View Case Study</a>
             </div>
 
             <!-- Project 2 -->
             <div class="project-showcase animate-fade-up">
                 <h3 class="project-name">Dr.Nut - Rebranding</h3>
                 <div class="project-image">
-                    <img src="https://placehold.co/800x450/ebb15b/ffffff?text=Project+2+Thumbnail" alt="Dr.Nut Thumbnail">
+                    <img src="images/drnut/drnut_thumbnail_L.jpg"
+                         srcset="images/drnut/drnut_thumbnail_S.jpg 200w,
+                                 images/drnut/drnut_thumbnail_M.jpg 400w,
+                                 images/drnut/drnut_thumbnail_L.jpg 800w"
+                         sizes="(max-width: 768px) 100vw, (max-width: 900px) 50vw, 550px"
+                         alt="Dr.Nut Rebranding Project Thumbnail"
+                         loading="lazy">
                 </div>
                 <div class="project-tags">
                     <span class="tag">Motion Design</span>
@@ -108,23 +120,8 @@
                 <p class="project-description">
                     <strong>Note:</strong> A project where the main challenge lies in how I re-create an old decayed brand into its new skin.
                 </p>
+                <a href="case_study_drnut.html" class="btn btn-primary">View Case Study</a>
             </div>
-
-            <!-- Project 3 -->
-            <div class="project-showcase animate-fade-up">
-                <h3 class="project-name">Project name #3</h3>
-                <div class="project-image">
-                    <img src="https://placehold.co/800x450/2D2D2D/ffffff?text=Project+3+Thumbnail" alt="Project 3 Thumbnail">
-                </div>
-                <div class="project-tags">
-                    <span class="tag">UI/UX</span>
-                    <span class="tag">Branding</span>
-                </div>
-                <p class="project-description">
-                    <strong>Note:</strong> This is box part where I put a description about the project.
-                </p>
-            </div>
-
         </div>
     </section>
     
