@@ -1,0 +1,237 @@
+@use '../abstracts' as *;
+
+// ===========================================
+// PROJECT DETAIL PAGE
+// ===========================================
+
+// Hero Section
+
+// Project Intro
+.project-intro {
+    padding-top: 120px;
+  text-align: center;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $text-dark;
+
+    @include mobile {
+      font-size: 2.2rem;
+    }
+  }
+
+  .project-description {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $text-light;
+  }
+
+  .project-tags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+// Gallery Section
+.project-gallery {
+  padding: 4rem 0;
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .gallery-item {
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .gallery-featured {
+    position: relative;
+    margin-top: 2rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .featured-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+
+      span {
+        display: block;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.2;
+
+        @include mobile {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// Case Study Section
+.project-case-study {
+  padding: 4rem 0;
+
+  .case-study-content {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+
+  .case-study-item {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #e5e7eb;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    h4 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $text-dark;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-left: 1rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: $color-green;
+        border-radius: 2px;
+      }
+    }
+
+    p {
+      color: $text-light;
+      line-height: 1.8;
+    }
+  }
+
+  .case-study-duration {
+    background: $off-white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 3rem;
+
+    .duration-label {
+      display: block;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $text-light;
+      margin-bottom: 0.5rem;
+    }
+
+    .duration-value {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $color-green;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $text-light;
+      font-size: 0.95rem;
+    }
+  }
+
+  .tools-section {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: $text-dark;
+    }
+
+    .tools-subtitle {
+      color: $text-light;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .tools-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background: $off-white;
+    border-radius: $border-radius;
+    min-width: 100px;
+    transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $text-dark;
+    }
+  }
+}

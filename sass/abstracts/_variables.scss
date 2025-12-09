@@ -1,10 +1,45 @@
-@use 'fonts';
+// ===========================================
+// COLORS
+// ===========================================
+$color-green: #B6CE4D;
+$color-gold: #ebb15b;
 
-$primary-color: #B6CE4D;
-$secondary-color: #f0c6d4;
-$accent-color: #ebb15b;
-$body-text-color: #836c59;
-$heading-font-family: 'keraregular', helvetica, arial;
-$body-font-family: helvetica,arial, sans-serif;
-$base-font-size: 18px;
-$base-font-weight: 400;
+// Neutrals
+$bg-white: #ffffff;
+$text-dark: #2D2D2D;
+$text-light: #666666;
+$off-white: #f9fafb;
+
+// ===========================================
+// LAYOUT
+// ===========================================
+$container-width: 1200px;
+$border-radius: 8px;
+
+// ===========================================
+// TYPOGRAPHY
+// ===========================================
+$font-family: 'Poppins', sans-serif;
+$font-family-2: 'Russo One', sans-serif;
+
+// ===========================================
+// TRANSITIONS & TIMING
+// ===========================================
+$transition-speed: 0.3s;
+$transition-ease: ease;
+
+// ===========================================
+// SPACING
+// ===========================================
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 40px;
+$spacing-xl: 60px;
+$spacing-xxl: 80px;
+
+// ===========================================
+// BREAKPOINTS
+// ===========================================
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 900px;

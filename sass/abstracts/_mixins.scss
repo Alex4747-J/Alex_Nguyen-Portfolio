@@ -1,7 +1,23 @@
-//Mixins
-@mixin borderRad($radius) {
-      border-radius: $radius 0 $radius 0;
+// ===========================================
+// MEDIA QUERIES
+// ===========================================
+@use 'variables' as *;
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
 }
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+// ===========================================
+// FLEXBOX UTILITIES
+// ===========================================
 
 @mixin flex-center {
   display: flex;
@@ -9,6 +25,37 @@
   align-items: center;
 }
 
-@mixin transition ($time){
-  transition: all $time ease-in-out;
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ===========================================
+// TRANSITIONS
+// ===========================================
+
+@mixin smooth-transition($properties...) {
+  transition: $properties $transition-speed $transition-ease;
+}
+
+// ===========================================
+// HOVER EFFECTS
+// ===========================================
+
+@mixin hover-lift {
+  @include smooth-transition(transform, box-shadow);
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// ===========================================
+// ICON BOX
+// ===========================================
+
+@mixin icon-box($bg-color, $text-color) {
+  background-color: rgba($bg-color, 0.15);
+  color: $text-color;
 }

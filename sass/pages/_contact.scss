@@ -1,2 +1,227 @@
-@use '../abstracts';
+@use '../abstracts' as *;
 
+.contact-section {
+  padding-top: 140px;
+  padding-bottom: $spacing-xxl;
+  min-height: 100vh;
+}
+
+.contact-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+
+  .intro-tag {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    color: $text-light;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.contact-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: transform $transition-speed $transition-ease;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    .icon-circle {
+      background: $color-green;
+      color: white;
+      box-shadow: 0 8px 25px rgba($color-green, 0.3);
+    }
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba($color-green, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-speed $transition-ease;
+    color: $color-green;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  span {
+    font-size: 0.95rem;
+    color: $text-dark;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  // Alternate colors
+  &:nth-child(2) .icon-circle {
+    background: rgba($color-gold, 0.1);
+    color: $color-gold;
+  }
+
+  &:nth-child(2):hover .icon-circle {
+    background: $color-gold;
+    color: white;
+    box-shadow: 0 8px 25px rgba($color-gold, 0.3);
+  }
+
+  &:nth-child(3) .icon-circle {
+    background: rgba(#0077B5, 0.1);
+    color: #0077B5;
+  }
+
+  &:nth-child(3):hover .icon-circle {
+    background: #0077B5;
+    color: white;
+    box-shadow: 0 8px 25px rgba(#0077B5, 0.3);
+  }
+}
+
+
+.form-container {
+  max-width: 650px;
+  margin: 0 auto;
+  background: $off-white;
+  padding: 2.5rem;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.contact-form {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    @include mobile {
+      margin-bottom: 1rem;
+    }
+
+    &:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: $text-dark;
+    font-size: 0.95rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e5e7eb;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    font-family: $font-family;
+    transition: border-color $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+    background: white;
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-green;
+      box-shadow: 0 0 0 3px rgba($color-green, 0.1);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+// ===========================================
+// RESPONSIVE
+// ===========================================
+@include tablet {
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-icons {
+    gap: 2rem;
+  }
+}
+
+@include mobile {
+  .contact-section {
+    padding-top: 120px;
+  }
+
+  .contact-header {
+    margin-bottom: 2rem;
+  }
+
+  .contact-icons {
+    margin-bottom: 2rem;
+  }
+}

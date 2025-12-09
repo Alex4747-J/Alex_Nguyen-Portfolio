@@ -1,0 +1,17 @@
+// ===========================================
+// UTILITY CLASSES
+// ===========================================
+@use '../abstracts' as *;
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}

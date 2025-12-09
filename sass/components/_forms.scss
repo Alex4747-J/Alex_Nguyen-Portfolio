@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.form-container {
+  background: $bg-white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.form-group {
+  margin-bottom: 25px;
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-dark;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 16px;
+  background-color: $off-white;
+  border: 2px solid transparent;
+  border-radius: $spacing-xs;
+  font-family: $font-family;
+  font-size: 1rem;
+  color: $text-dark;
+  @include smooth-transition(all);
+
+  &:focus {
+    outline: none;
+    background-color: $bg-white;
+    border-color: $color-gold;
+    box-shadow: 0 4px 10px rgba($color-gold, 0.15);
+  }
+}

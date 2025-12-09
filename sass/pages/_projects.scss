@@ -1,0 +1,155 @@
+@use '../abstracts' as *;
+
+// ===========================================
+// PAGE HEADER
+// ===========================================
+.page-header {
+  padding-top: 160px;
+  padding-bottom: $spacing-xl;
+  text-align: center;
+}
+
+.header-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: $text-light;
+}
+
+.text-link {
+  font-weight: 600;
+  color: $color-green;
+  position: relative;
+
+  &:hover {
+    color: $color-gold;
+  }
+}
+
+// ===========================================
+// SECTION TITLE (Reusable)
+// ===========================================
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $color-green;
+    border-radius: 2px;
+  }
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $text-light;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+// ===========================================
+// WORK SECTION - SINGLE IMAGE LAYOUT
+// ===========================================
+.work-section {
+  padding: 4rem 0;
+
+  .section-title {
+    margin-bottom: 3rem;
+  }
+
+  .project-showcase {
+    margin-bottom: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: $color-green;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: $border-radius;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba($color-green, 0.3);
+  }
+
+  // Single Image Style
+  .project-image {
+    border-radius: $border-radius;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all $transition-speed $transition-ease;
+    background: rgba($color-green, 0.15);
+    color: $color-green;
+    border: 1px solid rgba($color-green, 0.3);
+
+    &:hover {
+      background: $color-green;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    &:nth-child(even) {
+      background: rgba($color-gold, 0.15);
+      color: $color-gold;
+      border: 1px solid rgba($color-gold, 0.3);
+
+      &:hover {
+        background: $color-gold;
+        color: white;
+      }
+    }
+  }
+
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $text-light;
+    padding-left: 1rem;
+    border-left: 3px solid $color-green;
+  }
+}
+
