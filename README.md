@@ -22,7 +22,7 @@ A modern, responsive portfolio website showcasing my work as an Interactive Medi
 - **GSAP** - ScrollTrigger animations
 - **Plyr.js** - Custom video player
 
-## I## 🎯 Featured Projects
+## 🎯 Featured Projects
 
 ### Gekk Earbuds
 A vibrant earbuds branding project featuring 3D modeling, motion design, and web development. Inspired by Gekko from Valorant with a bold, quirky aesthetic.
