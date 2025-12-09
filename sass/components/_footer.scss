@@ -1,18 +1,81 @@
-@use '../abstracts';
+@use '../abstracts' as *;
 
-footer{
-    background-color: abstracts.$accent-color;
-    color: #fff;
-    height: 80px;
-    padding: 20px;
-    text-align: center;
-    @include abstracts.borderRad(20px);
-    
-    p{
-        font-size: 18px;
-        margin: 0;
-        line-height: 0  ;
+.footer {
+  background: #e5e7eb;
+  padding: 3rem 0 2rem;
+
+  .footer-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 2rem;
     }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-dark;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    // LinkedIn
+    &:nth-child(1):hover {
+      background: #0077B5;
+      color: white;
+    }
+
+    // GitHub
+    &:nth-child(2):hover {
+      background: #333;
+      color: white;
+    }
+
+    // Instagram
+    &:nth-child(3):hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+    }
+  }
+
+  .footer-logo {
+    a {
+      display: inline-block;
+    }
+
+    img {
+      height: 80px;
+      width: auto;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin: 0;
+  }
 }
-
-

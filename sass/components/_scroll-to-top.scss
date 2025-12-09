@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: $color-green;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba($color-green, 0.3);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  @include smooth-transition(opacity, visibility, transform, background-color, box-shadow);
+
+  // Show when scrolled
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  // Arrow icon
+  &::before {
+    content: '↑';
+    font-size: 24px;
+    font-weight: 700;
+    color: $bg-white;
+    line-height: 1;
+  }
+
+  // Hover effect
+  &:hover {
+    background: #a3b844; // Darker green
+    box-shadow: 0 6px 20px rgba($color-green, 0.4);
+    transform: translateY(-3px);
+  }
+
+  // Active/click effect
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+@include mobile {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+
+    &::before {
+      font-size: 20px;
+    }
+  }
+}

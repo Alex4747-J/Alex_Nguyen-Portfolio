@@ -1,0 +1,130 @@
+@use '../abstracts' as *;
+
+.cta-form-section {
+  background: linear-gradient(135deg, $color-green 0%, #a3b844 100%);
+  padding: $spacing-xxl 0;
+  margin-top: $spacing-xxl;
+  position: relative;
+  overflow: hidden;
+
+  //I used some decorative shapes
+  &::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    bottom: -50px;
+    left: -50px;
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-form-section h2 {
+  color: $bg-white;
+  font-size: 2.5rem;
+  margin-bottom: $spacing-sm;
+}
+
+.cta-form-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: $spacing-lg;
+}
+
+// ===========================================
+// CTA FORM STYLES
+// ===========================================
+
+.cta-form {
+  display: flex;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  input {
+    flex: 1;
+    padding: 18px 24px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    color: $text-dark;
+    @include smooth-transition(all);
+
+    &::placeholder {
+      color: $text-light;
+    }
+
+    &:focus {
+      outline: none;
+      background: $bg-white;
+      border-color: $bg-white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .btn-cta {
+    padding: 18px 36px;
+    background: $text-dark;
+    color: $bg-white;
+    border: 2px solid $text-dark;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    @include smooth-transition(all);
+
+    &:hover {
+      background: transparent;
+      color: $text-dark;
+      border-color: $text-dark;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.cta-note {
+  margin-top: $spacing-sm;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+// ===========================================
+// RESPONSIVE
+// ===========================================
+
+@include mobile {
+  .cta-form-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-form {
+    flex-direction: column;
+    gap: 15px;
+
+    .btn-cta {
+      width: 100%;
+    }
+  }
+}

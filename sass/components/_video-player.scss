@@ -1,0 +1,224 @@
+@use '../abstracts' as *;
+
+:root {
+  --plyr-color-main: #{$color-green};
+  --plyr-control-icon-size: 20px;
+  --plyr-control-radius: 50px;
+  --plyr-font-family: #{$font-family};
+  --plyr-font-size-base: 16px;
+  --plyr-font-weight-regular: 500;
+}
+
+#player-container {
+  max-width: $container-width;
+  margin: $spacing-xxl auto;
+  padding: 0 $spacing-md;
+  position: relative;
+  
+  @include mobile {
+    margin: $spacing-lg auto;
+  }
+}
+
+.plyr {
+  border-radius: $border-radius * 2; // 16px
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  @include smooth-transition(transform, box-shadow);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.plyr__video-wrapper {
+  background: $text-dark;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba($color-green, 0.05) 0%, 
+      rgba($color-gold, 0.05) 100%
+    );
+    pointer-events: none;
+    opacity: 0;
+    @include smooth-transition(opacity);
+  }
+  
+  .plyr:hover & {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.plyr__controls {
+  background: linear-gradient(to top, 
+    rgba($text-dark, 0.95), 
+    rgba($text-dark, 0.7)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: $spacing-sm $spacing-md;
+  border-top: 1px solid rgba($color-green, 0.2);
+  
+  @include mobile {
+    padding: 12px $spacing-sm;
+  }
+}
+
+.plyr__control {
+  color: $bg-white;
+  @include smooth-transition(all);
+  
+  svg {
+    width: 20px;
+    height: 20px;
+    
+    @include mobile {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  &:hover,
+  &.plyr__tab-focus,
+  &[aria-expanded="true"] {
+    background: rgba($color-green, 0.15);
+    color: $color-green;
+  }
+  
+  &:focus {
+    outline: 2px solid $color-green;
+    outline-offset: 3px;
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  &[disabled] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.plyr__progress {
+  position: relative;
+  
+  input[type="range"] {
+    color: $color-green;
+  }
+}
+
+.plyr__progress__buffer {
+  background: rgba($bg-white, 0.2);
+}
+
+.plyr__volume {
+  color: $bg-white;
+  
+  input[type="range"] {
+    &::-webkit-slider-runnable-track {
+      background: rgba($bg-white, 0.2);
+    }
+    
+    &::-webkit-slider-thumb {
+      background: $color-green;
+      box-shadow: 0 2px 6px rgba($color-green, 0.3);
+    }
+    
+    &::-moz-range-track {
+      background: rgba($bg-white, 0.2);
+    }
+    
+    &::-moz-range-thumb {
+      background: $color-green;
+      box-shadow: 0 2px 6px rgba($color-green, 0.3);
+    }
+  }
+}
+
+.plyr__time {
+  color: $bg-white;
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: $font-family;
+  
+  @include mobile {
+    font-size: 0.8rem;
+  }
+}
+
+.plyr--loading {
+  .plyr__progress__buffer {
+    background: linear-gradient(90deg, 
+      rgba($color-green, 0.3) 0%, 
+      rgba($color-green, 0.1) 50%, 
+      rgba($color-green, 0.3) 100%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes loading {
+  0% { 
+    background-position: 200% 0; 
+  }
+  100% { 
+    background-position: -200% 0; 
+  }
+}
+
+.plyr--fullscreen-active {
+  .plyr__controls {
+    background: linear-gradient(to top, 
+      rgba($text-dark, 0.98), 
+      rgba($text-dark, 0) 100%
+    );
+  }
+}
+
+// ===========================================
+// POSTER/THUMBNAIL
+// ===========================================
+.plyr__poster {
+  background-size: cover;
+  background-position: center;
+  border-radius: ($border-radius * 2) ($border-radius * 2) 0 0;
+}
+
+// ===========================================
+// TOOLTIP
+// ===========================================
+.plyr__tooltip {
+  background: $text-dark;
+  color: $bg-white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  font-family: $font-family;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+// ===========================================
+// CAPTIONS (if used)
+// ===========================================
+.plyr__captions {
+  font-family: $font-family;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.plyr__caption {
+  background: rgba($text-dark, 0.9);
+  border-radius: 6px;
+  padding: $spacing-xs 12px;
+}

@@ -1,23 +1,46 @@
-@use '../abstracts';
+// ===========================================
+// TYPOGRAPHY
+// ===========================================
+@use '../abstracts' as *;
 
-body {
-    font-family: abstracts.$body-font-family;
+h2 {
+  font-family: $font-family-2;
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: $spacing-lg;
 }
 
-h1,h2,h3{
-    font-family: abstracts.$heading-font-family;
-}
-
-h2{
-    font-size: 36px;
-    color: abstracts.$accent-color;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    letter-spacing: -2px;
+h3 {
+  
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: $spacing-sm;
 }
 
 p {
-    line-height: 24px;
-    margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: $text-light;
+  margin-bottom: $spacing-md;
 }
 
+// ===========================================
+// TEXT HIGHLIGHTS
+// ===========================================
+
+.highlight-green {
+  color: $color-green;
+}
+
+.highlight-gold {
+  color: $color-gold;
+}
+
+.intro-tag {
+  display: inline-block;
+  font-weight: 600;
+  color: $color-gold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin-bottom: $spacing-sm;
+}
