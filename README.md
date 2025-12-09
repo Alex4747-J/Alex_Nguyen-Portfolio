@@ -1,6 +1,6 @@
 # The Portfolio of Alex Nguyen - Front End Developer/Fullstack Developer in the making 🚀
 
-![my portfoilio](images/portfolio.jpg)
+![my portfoilio](images/Readme_Profile.jpg)
 
 Welcome to my personal portfolio repository! This portfolio showcases my work, skills, and projects that reflect my journey as a Front-End Web developer. Here, you’ll find a variety of projects that highlight my abilities including front-end development, responsive design and javascript.
 
