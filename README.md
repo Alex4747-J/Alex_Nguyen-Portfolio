@@ -1,47 +1,64 @@
-# The Portfolio of Alex Nguyen - Front End Developer/Fullstack Developer in the making 🚀
+# Alex Nguyen's Portfolio 🎨
 
-![my portfoilio](images/Readme_Profile.jpg)
+A modern, responsive portfolio website showcasing my work as an Interactive Media Design student at Fanshawe College. Built with clean code, smooth animations, and a focus on user experience.
 
-Welcome to my personal portfolio repository! This portfolio showcases my work, skills, and projects that reflect my journey as a Front-End Web developer. Here, you’ll find a variety of projects that highlight my abilities including front-end development, responsive design and javascript.
+![Portfolio Preview](images/Readme_Profile.JPG)
 
-## Table of Contents 📋<br/>
-[About](#about)<br/>
-[Skills](#skills)<br/>
-[Languages](#languages)<br/>
-[Features](#features)<br/>
-[Installation](#installation)<br/>
-[Contact](#contact)<br/>
+## ✨ Features
 
-## About 👨🏻‍💻 <a id="about"></a>
-Welcome to my portfolio. This collection showcases my passion for building seamless digital experiences, from initial design concepts to full-stack deployment. You will find projects that demonstrate my skills in user-centric UI/UX, responsive front-end development, and robust back-end engineering. Each piece is a story of creative problem-solving and a commitment to writing clean, efficient code. I invite you to explore how I transform complex challenges into functional, elegant, and impactful web solutions.
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- **Smooth Animations** - GSAP-powered scroll animations and transitions
+- **Optimized Images** - Srcset implementation for fast loading on all devices
+- **Custom Video Player** - Styled video player using Plyr.js
+- **Contact Form** - PHP-powered contact form with success/error pages
+- **Case Studies** - Detailed project breakdowns with galleries
 
-## Skills 🥷 <a id="skills"></a>
-Here’s a quick overview of the skills highlighted in this portfolio:
+## 🛠️ Built With
 
-### Languages: 🛠️ <a id="languages"></a>
-JavaScript, HTML5, CSS3
-### Frameworks and Libraries: 
-Vue.js, GreenSock, React
-### Tools: 
-Git, Figma
-### Technologies: 
-RESTful APIs, Responsive Design, AJAX  
+- **HTML5** - Semantic markup
+- **Sass/SCSS** - 7-1 architecture pattern for maintainable styling
+- **JavaScript** - Vanilla JS with GSAP for animations
+- **PHP** - Contact form backend
+- **GSAP** - ScrollTrigger animations
+- **Plyr.js** - Custom video player
 
-## Features 📋 <a id="features"></a>
-  ⚡️ Fully Responsive
-  ⚡️ Valid HTML5 & CSS3
-  ⚡️ GreenSock Animations
+## I## 🎯 Featured Projects
 
-## Installation 📦 <a id="installation"></a>
-To run the portfolio locally:
+### Gekk Earbuds
+A vibrant earbuds branding project featuring 3D modeling, motion design, and web development. Inspired by Gekko from Valorant with a bold, quirky aesthetic.
 
-- Clone this repository
-- Navigate into the project directory:
-- Open the index.html file in your browser, or if using a local server, start the server and navigate to localhost to view.
+**Tools:** Figma, Cinema 4D, After Effects, HTML, Sass, JavaScript
 
-## Contact 📱 <a id="contact"></a>
-Feel free to reach out if you’d like to collaborate or have any questions!
+### Dr.Nut Rebranding
+Reviving a forgotten 1960s soda brand with a fresh, retro-inspired identity. Complete rebrand including logo, brand guidelines, packaging design, and promotional materials.
 
-LinkedIn: [Alex Nguyen](https://www.linkedin.com/in/anh-nguyen-53280b266)
+**Tools:** Figma, Illustrator, Cinema 4D, After Effects, HTML, CSS, JavaScript
 
-Thank you for visiting my portfolio!
+## 🚀 Getting Started
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/portfolio.git
+```
+
+2. If you want to compile Sass:
+```bash
+npm install -g sass
+sass --watch sass/main.scss css/main.css
+```
+
+3. For the contact form to work, deploy to a PHP-enabled server
+
+## 📄 License
+
+This project is for portfolio/educational purposes.
+
+## 📬 Contact
+
+- **Email:** npanh1903@gmail.com
+- **LinkedIn:** [Alex Nguyen](https://www.linkedin.com/in/anh-nguyen-53280b266/)
+- **Location:** London, Ontario, Canada
+
+---
+
+Made with ☕ and determination by Alex Nguyen | Interactive Media Design @ Fanshawe College
