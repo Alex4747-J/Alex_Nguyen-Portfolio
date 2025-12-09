@@ -150,6 +150,11 @@
     color: $text-light;
     padding-left: 1rem;
     border-left: 3px solid $color-green;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-showcase > .btn {
+    display: inline-block;
+    margin-top: 0.5rem;
   }
 }
-
