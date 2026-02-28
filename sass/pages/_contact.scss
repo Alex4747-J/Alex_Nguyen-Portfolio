@@ -225,3 +225,16 @@
     margin-bottom: 2rem;
   }
 }
+.feedback-error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.feedback-success {
+    color: $color-green;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
