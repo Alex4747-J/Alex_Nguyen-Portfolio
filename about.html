@@ -7,6 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+
+    <!-- Main JavaScript -->
+    <script type="module" defer src="js/home.js"></script>
 </head>
 <body>
     <h1 class="hidden">Welcome to Alex Nguyen's Portfolio</h1>
@@ -14,9 +20,9 @@
         <nav class="navbar">
             <h2 class="hidden">Main Navigation</h2>
             <div class="container nav-container">
-                <a href="index.html" class="logo"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
+                <a href="index.php" class="logo"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="about.html" class="active">About Me</a></li>
                     <li><a href="contact.php" class="btn-nav">Contact</a></li>
                 </ul>
@@ -55,7 +61,7 @@
                 <p>When I'm not coding components in React or keyframing in After Effects, you can usually find me exploring London's coffee shops or experimenting with photography.</p>
 
                 <div class="cta-group">
-                    <a href="your-resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
+                    <a href="images/Anh_Nguyen-Resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
                     <a href="contact.php" class="btn btn-secondary">Let's Chat</a>
                 </div>
             </div>
@@ -177,7 +183,7 @@
                             <div class="timeline-content">
                                 <h4>Interactive Media Design</h4>
                                 <p class="timeline-place">Fanshawe College, London, Ontario</p>
-                                <span class="timeline-date">2023 - 2025</span>
+                                <span class="timeline-date">2023 - 2026</span>
                             </div>
                         </div>
                         
@@ -186,7 +192,7 @@
                             <div class="timeline-content">
                                 <h4>UI/UX Design Certificate</h4>
                                 <p class="timeline-place">Online Course</p>
-                                <span class="timeline-date">2025</span>
+                                <span class="timeline-date">2026</span>
                             </div>
                         </div>
                         
@@ -248,9 +254,10 @@
                 <h2>You're still here?</h2>
                 <p>Yippie, that means that my work resonates with you, and we're ready to be (work) besties! Let your email here and I will reach you within 24 hours!</p>
                 <form class="cta-form">
-                    <input type="email" placeholder="your.email@example.com" required>
+                    <input type="email" id="cta-email" name="email" placeholder="your.email@example.com" required>
                     <button type="submit" class="btn-cta">Let's Connect</button>
                 </form>
+                <div id="cta-feedback"></div>
                 <p class="cta-note">Prefer to chat first? Visit my <a href="contact.php" style="color: white; font-weight: 600;">contact page</a></p>
             </div>
         </div>
@@ -268,20 +275,12 @@
                 </a>
             </div>
             <div class="footer-logo">
-                <a href="index.html"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
+                <a href="index.php"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
             </div>
         </div>
         <div class="container">
             <p class="copyright">Alex Nguyen © 2025. Built with code & raw determination (coffee)</p>
         </div>
     </footer>
-
-    <!-- GSAP Library -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    
-    <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
 </body>
 </html>
