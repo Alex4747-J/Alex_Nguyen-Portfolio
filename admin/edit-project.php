@@ -155,15 +155,13 @@ $p = $projects[0];
                 </div>
 
                 <div class="admin-section-title">Video</div>
-                <div class="form-group">
-                    <label for="video_src">Video Source</label>
-                    <input type="text" id="video_src" name="video_src" value="<?= htmlspecialchars($p['video_src']) ?>">
-                </div>
                 <div class="form-row">
+                    
                     <div class="form-group">
-                        <label for="video_poster">Video Poster</label>
-                        <input type="text" id="video_poster" name="video_poster" value="<?= htmlspecialchars($p['video_poster']) ?>">
+                        <label for="video_src">Video Source</label>
+                        <input type="text" id="video_src" name="video_src" value="<?= htmlspecialchars($p['video_src']) ?>" placeholder="https://www.youtube.com/watch?v=...">
                     </div>
+                    
                     <div class="form-group">
                         <label for="video_title">Video Title</label>
                         <input type="text" id="video_title" name="video_title" value="<?= htmlspecialchars($p['video_title']) ?>">
