@@ -29,8 +29,17 @@ public function connect()
         $username = $config['username'];
         $password = $config['password'];
 
-        return new PDO ($dsn, $username, $password);
-        $connection = new PDO($dsn, $username, $password);
+        try {
+            // We add PDO::ERRMODE_EXCEPTION to force PDO to report errors clearly
+            $connection = new PDO($dsn, $username, $password);
+            $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $connection;
+            
+        } catch (\PDOException $e) {
+            // If the connection fails, print the error to the screen and stop the script
+            echo "Database Connection Failed: " . $e->getMessage();
+            die(); 
+        }
     }
 
 public function getConfig()
