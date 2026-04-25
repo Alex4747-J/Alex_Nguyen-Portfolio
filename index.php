@@ -15,6 +15,20 @@ $db = new Database();
 
 $projects = $db->query("SELECT * FROM projects ORDER BY id ASC");
 $tags = $db->query("SELECT * FROM project_tags ORDER BY id ASC");
+
+// Build a unique list of tag names for the filter buttons
+$uniqueTags = [];
+foreach ($tags as $tag) {
+    if (!in_array($tag['name'], $uniqueTags)) {
+        $uniqueTags[] = $tag['name'];
+    }
+}
+
+// Build a lookup: project_id => array of tag names
+$projectTags = [];
+foreach ($tags as $tag) {
+    $projectTags[$tag['project_id']][] = $tag['name'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +41,7 @@ $tags = $db->query("SELECT * FROM project_tags ORDER BY id ASC");
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.8.3/plyr.css" />
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/grid.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="alex_logo-favicon/favicon-96x96.png" sizes="96x96" />
@@ -35,13 +50,13 @@ $tags = $db->query("SELECT * FROM project_tags ORDER BY id ASC");
     <link rel="apple-touch-icon" sizes="180x180" href="alex_logo-favicon/apple-touch-icon.png" />
     <link rel="manifest" href="alex_logo-favicon/site.webmanifest" />
     
-        <!-- GSAP Library -->
+    <!-- GSAP Library -->
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     
     <!-- Plyr -->
-     <script defer src="https://cdn.plyr.io/3.8.3/plyr.js"></script>
+    <script defer src="https://cdn.plyr.io/3.8.3/plyr.js"></script>
 
     <!-- Main JavaScript -->
     <script type="module" defer src="js/home.js"></script>
@@ -92,7 +107,7 @@ $tags = $db->query("SELECT * FROM project_tags ORDER BY id ASC");
     </header>
 
     <main>
-    <section id="player-container">
+    <section id="player-container" class="player-container--home">
         <h2><span class="highlight-green">Demo</span> Reels</h2>
         <video controls preload="metadata" poster="images/DemoReels_Poster.webp">
             <source src="video/DemoReels.webm" type="video/webm">
@@ -114,32 +129,44 @@ $tags = $db->query("SELECT * FROM project_tags ORDER BY id ASC");
         <div class="container">
             <h2 class="section-title animate-fade-up">Projects I've worked on</h2>
             
-            <!-- Project Layout -->
-            <?php foreach ($projects as $project) : ?>
-                <div class="project-showcase animate-fade-up">
-                    <h3 class="project-name"><?= htmlspecialchars($project['title']) ?></h3>
-                    <div class="project-image">
-                        <img src="<?= htmlspecialchars($project['thumbnail_lg']) ?>"
-                            srcset="<?= htmlspecialchars($project['thumbnail_sm']) ?> 200w,
-                                    <?= htmlspecialchars($project['thumbnail_md']) ?> 400w,
-                                    <?= htmlspecialchars($project['thumbnail_lg']) ?> 800w"
-                            sizes="(max-width: 768px) 100vw, (max-width: 900px) 50vw, 550px"
-                            alt="<?= htmlspecialchars($project['title']) ?> Thumbnail"
-                            loading="lazy">
+            <!-- Tag Filter Buttons -->
+            <div class="filter-tags animate-fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <?php foreach ($uniqueTags as $tagName) : ?>
+                    <button class="filter-btn" data-filter="<?= htmlspecialchars($tagName) ?>"><?= htmlspecialchars($tagName) ?></button>
+                <?php endforeach; ?>
+            </div>
+
+            <!-- 2-Column Project Grid -->
+            <div class="project-grid">
+                <?php foreach ($projects as $project) : ?>
+                    <div class="project-card-item animate-fade-up" data-tags="<?= htmlspecialchars(implode(',', $projectTags[$project['id']] ?? [])) ?>">
+                        <a href="case_study.php?slug=<?= htmlspecialchars($project['slug']) ?>" class="project-card-link">
+                            <div class="project-card-image">
+                                <img src="<?= htmlspecialchars($project['thumbnail_lg']) ?>"
+                                    srcset="<?= htmlspecialchars($project['thumbnail_sm']) ?> 200w,
+                                            <?= htmlspecialchars($project['thumbnail_md']) ?> 400w,
+                                            <?= htmlspecialchars($project['thumbnail_lg']) ?> 800w"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    alt="<?= htmlspecialchars($project['title']) ?> Thumbnail"
+                                    loading="lazy">
+                            </div>
+                            <div class="project-card-body">
+                                <div class="project-card-tags">
+                                    <?php if (isset($projectTags[$project['id']])) : ?>
+                                        <?php foreach ($projectTags[$project['id']] as $tagName) : ?>
+                                            <span class="tag"><?= htmlspecialchars($tagName) ?></span>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                                <p class="project-card-desc">
+                                    <strong>Note:</strong> <?= htmlspecialchars($project['short_desc']) ?>
+                                </p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="project-tags">
-                        <?php foreach ($tags as $tag) : ?>
-                            <?php if ($tag['project_id'] === $project['id']) : ?>
-                                <span class="tag"><?= htmlspecialchars($tag['name']) ?></span>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </div>
-                    <p class="project-description">
-                        <strong>Note:</strong> <?= htmlspecialchars($project['short_desc']) ?>
-                    </p>
-                    <a href="case_study.php?slug=<?= htmlspecialchars($project['slug']) ?>" class="btn btn-primary">View Case Study</a>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
     </section>
     
@@ -169,6 +196,9 @@ $tags = $db->query("SELECT * FROM project_tags ORDER BY id ASC");
                 <a href="https://github.com/Alex4747-J" target="_blank" class="social-icon" aria-label="GitHub">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github Icon">
                 </a>
+            </div>
+            <div class="quote">
+                <p>"Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs</p>
             </div>
             <div class="footer-logo">
                 <a href="index.php"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
