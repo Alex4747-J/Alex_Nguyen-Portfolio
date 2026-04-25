@@ -150,12 +150,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="admin-section-title">Video</div>
                 <div class="form-group">
                     <label for="video_src">Video Source</label>
-                    <input type="text" id="video_src" name="video_src" placeholder="video/MyVideo.webm">
+                    <input type="text" id="video_src" name="video_src" placeholder="https://www.youtube.com/watch?v=...">
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="video_poster">Video Poster</label>
-                        <input type="text" id="video_poster" name="video_poster" placeholder="images/poster.webp">
+                        <input type="text" id="video_poster" name="video_poster" placeholder="Optional for now, not used for YouTube embeds">
                     </div>
                     <div class="form-group">
                         <label for="video_title">Video Title</label>
@@ -183,3 +183,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </body>
 </html>
+    
