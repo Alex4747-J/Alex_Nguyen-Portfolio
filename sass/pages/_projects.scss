@@ -59,102 +59,159 @@
 }
 
 // ===========================================
-// WORK SECTION - SINGLE IMAGE LAYOUT
+// FILTER TAGS
+// ===========================================
+.filter-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: $font-family;
+  cursor: pointer;
+  border: 2px solid #e5e7eb;
+  background: transparent;
+  color: $text-dark;
+  transition: all $transition-speed $transition-ease;
+
+  &:hover {
+    border-color: $color-green;
+    color: $color-green;
+  }
+
+  &.active {
+    background: $color-green;
+    border-color: $color-green;
+    color: white;
+  }
+}
+
+// ===========================================
+// 2-COLUMN PROJECT GRID
+// ===========================================
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-grid-case-study {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+
+    // Hide scrollbar but keep functionality
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project-card-item-case-study {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+
+        @include mobile {
+            flex: 0 0 260px;
+        }
+    }
+}
+
+.project-card-item {
+  transition: opacity $transition-speed $transition-ease, transform $transition-speed $transition-ease;
+
+  &.hidden-card {
+    display: none;
+  }
+}
+
+.project-card-link {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+
+    .project-card-image img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.project-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform $transition-speed $transition-ease;
+  }
+}
+
+.project-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-card-tags .tag {
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba($color-green, 0.12);
+  color: $color-green;
+  border: 1px solid rgba($color-green, 0.25);
+
+  &:nth-child(even) {
+    background: rgba($color-gold, 0.12);
+    color: $color-gold;
+    border-color: rgba($color-gold, 0.25);
+  }
+}
+
+.project-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: $text-light;
+  margin-bottom: 0;
+}
+
+// ===========================================
+// WORK SECTION (wraps the grid)
 // ===========================================
 .work-section {
   padding: 4rem 0;
 
   .section-title {
     margin-bottom: 3rem;
-  }
-
-  .project-showcase {
-    margin-bottom: 4rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .project-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    background: $color-green;
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: $border-radius;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba($color-green, 0.3);
-  }
-
-  // Single Image Style
-  .project-image {
-    border-radius: $border-radius;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-  }
-
-  .project-tags {
-    display: flex;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all $transition-speed $transition-ease;
-    background: rgba($color-green, 0.15);
-    color: $color-green;
-    border: 1px solid rgba($color-green, 0.3);
-
-    &:hover {
-      background: $color-green;
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    &:nth-child(even) {
-      background: rgba($color-gold, 0.15);
-      color: $color-gold;
-      border: 1px solid rgba($color-gold, 0.3);
-
-      &:hover {
-        background: $color-gold;
-        color: white;
-      }
-    }
-  }
-
-  .project-description {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: $text-light;
-    padding-left: 1rem;
-    border-left: 3px solid $color-green;
-    margin-bottom: 1.5rem;
-  }
-
-  .project-showcase > .btn {
-    display: inline-block;
-    margin-top: 0.5rem;
   }
 }

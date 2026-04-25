@@ -1,25 +1,69 @@
 @use '../abstracts' as *;
 
 // ===========================================
-// PROJECT DETAIL PAGE
+// CASE STUDY HERO IMAGE
 // ===========================================
+.case-hero {
+  padding-top: 100px;
 
-// Hero Section
+  .case-hero-image {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    border-radius: 0 0 16px 16px;
 
-// Project Intro
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  @include mobile {
+    padding-top: 80px;
+
+    .case-hero-image {
+      max-height: 300px;
+    }
+  }
+}
+
+// ===========================================
+// PROJECT INTRO
+// ===========================================
 .project-intro {
-    padding-top: 120px;
-  text-align: center;
+  padding-top: 3rem;
+
+  .featured {
+    display: inline-block;
+    background: $color-green;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: $border-radius;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 
   h2 {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: $text-dark;
+    text-align: center;
 
     @include mobile {
       font-size: 2.2rem;
     }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: $color-green;
   }
 
   .project-description {
@@ -38,77 +82,89 @@
   }
 }
 
-// Gallery Section
+// ===========================================
+// GALLERY SECTION (title area)
+// ===========================================
 .project-gallery {
-  padding: 4rem 0;
+  padding: 4rem 0 0;
+}
 
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+// ===========================================
+// GALLERY GRIDS (interleaved in case study)
+// ===========================================
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 
-    @include mobile {
-      grid-template-columns: 1fr;
-    }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Single column variant for the third set
+.gallery-grid-single {
+  grid-template-columns: 1fr;
+}
+
+.gallery-item {
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
 
-  .gallery-item {
-    border-radius: $border-radius;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform $transition-speed $transition-ease, box-shadow $transition-speed $transition-ease;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
+.gallery-featured {
+  position: relative;
+  margin-top: 2rem;
+  border-radius: $border-radius;
+  overflow: hidden;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+  img {
+    width: 100%;
+    display: block;
   }
 
-  .gallery-featured {
-    position: relative;
-    margin-top: 2rem;
-    border-radius: $border-radius;
-    overflow: hidden;
+  .featured-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 
-    img {
-      width: 100%;
+    span {
       display: block;
-    }
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
 
-    .featured-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-
-      span {
-        display: block;
-        font-size: 3rem;
-        font-weight: 700;
-        line-height: 1.2;
-
-        @include mobile {
-          font-size: 2rem;
-        }
+      @include mobile {
+        font-size: 2rem;
       }
     }
   }
 }
 
-// Case Study Section
+// ===========================================
+// CASE STUDY SECTION
+// ===========================================
 .project-case-study {
-  padding: 4rem 0;
+  padding: 2rem 0 4rem;
 
   .case-study-content {
     max-width: 800px;

@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .footer {
-  background: #e5e7eb;
+  background: $color-gold;
   padding: 3rem 0 2rem;
 
   .footer-layout {
@@ -32,7 +32,7 @@
     color: $text-dark;
     transition: all 0.3s ease;
 
-    svg {
+    img {
       width: 22px;
       height: 22px;
     }
@@ -61,21 +61,39 @@
     }
   }
 
+  .quote {
+    font-style: italic;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    p {
+      color: $off-white;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+
   .footer-logo {
     a {
       display: inline-block;
     }
 
     img {
+      border-radius: 50%;
+      background: white;
+      width: 80px;
       height: 80px;
-      width: auto;
     }
   }
 
   .copyright {
     text-align: center;
     color: #6b7280;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0;
   }
 }
