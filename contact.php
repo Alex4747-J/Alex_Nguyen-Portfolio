@@ -123,6 +123,9 @@
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github Icon">
                 </a>
             </div>
+            <div class="quote">
+                <p>"Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs</p>
+            </div>
             <div class="footer-logo">
                 <a href="index.php"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
             </div>
