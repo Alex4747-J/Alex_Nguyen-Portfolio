@@ -1,6 +1,6 @@
 export function videoPlayer() {
 // Video Player
-  const videoPlayer = document.querySelector('#player-container video');
+  const videoPlayer = document.querySelector('#player-container .plyr__video-embed');
 
   // ===========================================
   // PLYR VIDEO PLAYER
@@ -8,7 +8,7 @@ export function videoPlayer() {
 
   function initVideoPlayer() {
     if (videoPlayer && typeof Plyr !== 'undefined') {
-      const player = new Plyr(videoPlayer, {
+      new Plyr(videoPlayer, {
         controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
       });
     }
