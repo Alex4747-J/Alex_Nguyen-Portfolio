@@ -7,12 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-
-    <!-- Main JavaScript -->
-    <script type="module" defer src="js/home.js"></script>
 </head>
 <body>
     <h1 class="hidden">Welcome to Alex Nguyen's Portfolio</h1>
@@ -20,9 +14,9 @@
         <nav class="navbar">
             <h2 class="hidden">Main Navigation</h2>
             <div class="container nav-container">
-                <a href="index.php" class="logo"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
+                <a href="index.html" class="logo"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
                 <ul class="nav-links">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Me</a></li>
                     <li><a href="contact.php" class="btn-nav">Contact</a></li>
                 </ul>
@@ -58,10 +52,10 @@
                 
                 <p>I don't just design static visuals, I build interactive experiences. My passion lies in the intersection of Front-End Development and Motion Design. I believe a website shouldn't just look good—it should feel alive.</p>
 
-                <p>When I'm not coding in with Vue or keyframing in After Effects, you can usually find me exploring London's coffee shops or experimenting with photography.</p>
+                <p>When I'm not coding components in React or keyframing in After Effects, you can usually find me exploring London's coffee shops or experimenting with photography.</p>
 
                 <div class="cta-group">
-                    <a href="images/Anh_Nguyen-Resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
+                    <a href="your-resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
                     <a href="contact.php" class="btn btn-secondary">Let's Chat</a>
                 </div>
             </div>
@@ -75,9 +69,9 @@
             <h2 class="section-title animate-fade-up">Skills</h2>
             <p class="section-subtitle animate-fade-up">What I Do Best</p>
             
-            <!-- Front-end Development Skills -->
+            <!-- Web Development Skills -->
             <div class="skills-category animate-fade-up">
-                <h3 class="category-title">Front-end Development</h3>
+                <h3 class="category-title">Web Development</h3>
                 <div class="skills-grid">
                     <div class="skill-item">
                         <div class="skill-icon">
@@ -104,10 +98,16 @@
                         <span>JavaScript</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                        <div class="skill-icon">                            
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"/>          
                         </div>
-                        <span>React</span>
+                        <span>Laravel</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">                                                    
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue.js"/>          
+                        </div>
+                        <span>Vue.js</span>
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon">
@@ -148,7 +148,7 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Cinema 4D</title><path d="M12.052 0C5.394-.007-.003 5.412 0 11.976.003 18.654 5.475 23.981 11.978 24c6.535.02 12.057-5.306 12.022-11.998-.009-1.665-.53-5.371-1.84-5.276-1.98.145-2.159 4.12-2.377 5.407-.417 2.46-1.346 5.08-2.953 6.99-1.88 2.359-4.697 3.634-7.662 3.158-3.55-.564-5.893-3.278-6.68-5.201-.753-1.723-1.035-4.162-.07-6.324 1.16-2.766 3.734-4.632 6.28-5.584 2.006-.827 4.103-1.151 5.357-1.375 2.516-.5 2.855-1.463 2.814-2.149-.015-.252-.256-.724-.785-.943C15.03.269 13.268.001 12.052 0zm5.098 1.342c.139.398.088.85-.148 1.256-.325.56-.972 1.05-1.897 1.29-1.636.428-2.976.554-4.34.96-1.312.39-3.397 1.018-5.316 2.552-.268.842-.341 1.892-.369 2.662.15 5.014 4.557 8.884 9.17 8.682.853-.037 1.921-.261 2.912-.68a13.56 13.56 0 0 0 1.387-2.683l.002-.002v-.002c.424-1.03.606-1.836.8-2.793.32-1.565.202-2.88 1.012-4.758.251-.582.71-1.113 1.258-1.346.25-.105.522-.133.79-.072-.89-2.471-3.115-4.326-5.26-5.066z"/></svg>
+                            <img src="https://cdn.simpleicons.org/cinema4d/5C2D91" alt="Cinema 4D">
                         </div>
                         <span>Cinema 4D</span>
                     </div>
@@ -157,6 +157,12 @@
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro">
                         </div>
                         <span>Premiere Pro</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">                            
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xd/xd-original.svg" alt="Adobe XS"/>
+                        </div>
+                        <span>Adobe XD</span>
                     </div>
                 </div>
             </div>
@@ -183,7 +189,7 @@
                             <div class="timeline-content">
                                 <h4>Interactive Media Design</h4>
                                 <p class="timeline-place">Fanshawe College, London, Ontario</p>
-                                <span class="timeline-date">2023 - 2026</span>
+                                <span class="timeline-date">2023 - 2025</span>
                             </div>
                         </div>
                         
@@ -192,7 +198,7 @@
                             <div class="timeline-content">
                                 <h4>UI/UX Design Certificate</h4>
                                 <p class="timeline-place">Online Course</p>
-                                <span class="timeline-date">2026</span>
+                                <span class="timeline-date">2025</span>
                             </div>
                         </div>
                         
@@ -213,18 +219,8 @@
                         <span class="column-icon">💼</span>
                         Work Experience
                     </h3>
-
                     
                     <div class="timeline">
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h4>Graphic Design Intern</h4>
-                                <p class="timeline-place">SoftEdit Skin, Atlanta, America</p>
-                                <span class="timeline-date">2026</span>
-                            </div>
-                        </div>
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
@@ -238,7 +234,7 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4>Graphic Design</h4>
-                                <p class="timeline-place">IU Podcast, International University, VietNam</p>
+                                <p class="timeline-place">IU Podcas, International University, VietNam</p>
                                 <span class="timeline-date">2020 - 2023</span>
                             </div>
                         </div>
@@ -264,10 +260,9 @@
                 <h2>You're still here?</h2>
                 <p>Yippie, that means that my work resonates with you, and we're ready to be (work) besties! Let your email here and I will reach you within 24 hours!</p>
                 <form class="cta-form">
-                    <input type="email" id="cta-email" name="email" placeholder="your.email@example.com" required>
+                    <input type="email" placeholder="your.email@example.com" required>
                     <button type="submit" class="btn-cta">Let's Connect</button>
                 </form>
-                <div id="cta-feedback"></div>
                 <p class="cta-note">Prefer to chat first? Visit my <a href="contact.php" style="color: white; font-weight: 600;">contact page</a></p>
             </div>
         </div>
@@ -284,16 +279,21 @@
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github Icon">
                 </a>
             </div>
-            <div class="quote">
-                <p>"Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs</p>
-            </div>
             <div class="footer-logo">
-                <a href="index.php"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
+                <a href="index.html"><img src="images/Logo.svg" alt="Alex Nguyen Logo"></a>
             </div>
         </div>
         <div class="container">
             <p class="copyright">Alex Nguyen © 2025. Built with code & raw determination (coffee)</p>
         </div>
     </footer>
+
+    <!-- GSAP Library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
